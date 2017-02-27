@@ -1,0 +1,35 @@
+
+<%= render 'form', patent: @patent %>
+<%= form_for @patient do |f| %>
+  <% if patent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h @>
+
+i     <ul>
+      <% patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<center><div class="toprow">
+
+<div class="floating-box1"><!-- main div box1-->
+<center><div class="toprow1"><!-- second inner top buttons div-->
+ 
+</div><!-- toprow div end here "buttons"-->
+
+
+<center><div class="toprowx"><!-- 7butoons start here-->
+
+
+
+</div><!-- 7buttons end -->
+
+<div class="meddiv"><!-- this is the meddle div-->
+
+</div><!-- end of the meddiv-->
+</div></center><!---end box1 biggiest box-->
+<%end%>

@@ -1,0 +1,45 @@
+    <%= f.hidden_field :time , :value => :date %>
+    .floating-boxnav {
+    background-color: #F5F5F5;
+    border: 3px solid #0080ff;
+    color: white;
+    padding: 1px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    float: left;
+    margin-top: 90px;
+     width: 150px;
+    height: 350px;
+} 
+
+
+<script type="text/javascript">
+  function show(sideID) {
+    var ele = document.getSideById(sideID);
+    if (!ele) {
+        alert("no such element");
+        return;
+    }
+    var bags = document.getSidesByClassName('bag');
+    for(var i = 0; i < bags.length; i++) {
+        bags[i].style.display = 'none';
+    }
+    ele.style.display = 'block';
+}
+</script>
+
+<script type="text/javascript">
+  function show(sideID) {
+    var ele = document.getSideById(sideID);
+    if (!ele) {
+        alert("no such element");
+        return;
+    }
+    var bags = document.getSidesByClassName('bag');
+    for(var i = 0; i < bags.length; i++) {
+        bags[i].style.display = 'none';
+    }
+    ele.style.display = 'block';
+}
+</script>

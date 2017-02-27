@@ -1,0 +1,261 @@
+<%= form_for(patient) do |f| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<center><div class="toprow">
+
+<center>
+
+   <div class="floating-boxxx"><%= link_to  'New Patient Visit', new_patient_path %><br></div>
+   <div class="floating-boxxx"><%= link_to  'Load Patient', patients_path %></div>
+   <div class="floating-boxxx">Admit<br>patient</div>
+   <div class="floating-boxxx">Discharge<br> Session</div>
+   <div class="floating-boxxx">Remove <br>Patient</div></center>
+   </div><!-- top first buttons-->
+
+</div><!-- topfirstdiv-->
+<div class="floating-box1"><!-- main div box1-->
+<center><div class="toprow1"><!-- second inner top buttons div-->
+
+  
+    <a href="#tabs-1">Nunc tincidunt</a>
+    <a href="#tabs-2">Proin dolor</a>
+    <a href="#tabs-3">Aenean lacinia</a>
+  
+</div></center><!-- toprow div end here "buttons"-->
+
+<!--------------------------------------------------------------------- -->
+  <div id="tabs-1">
+<center><div class="toprowx"><!-- 7butoons start here-->
+
+
+ <div class="floating-boxfd">
+    <div class="field">
+    
+  <center><font size="3">Gender:</font><%= f.select(:gender, ["male", "female"], {}, :style => "width:100px", :style => "height:27px" ) %></center>
+  </div>
+  </div>
+
+<div class="floating-boxfd">
+  <div class="field">
+    
+    <center><font size="3">Age:</font><%= f.text_field :age, :size=>"7", :maxlength=>"8" %></center>
+  </div>
+  </div>
+
+<div class="floating-boxfd">
+  <div class="field">
+  
+    <center><font size="3">Weight:</font><%= f.text_field :weight, :size=>"7", :maxlength=>"8" %></center>
+  </div>
+  </div>
+
+
+<div class="floating-boxfd">
+  <div class="field">
+   
+    <center><font size="3">BP:</font><%= f.text_field :bp, :size=>"7", :maxlength=>"8" %></center>
+  </div>
+</div>
+
+
+<div class="floating-boxfd">
+  <div class="field">
+   
+    <center><font size="3">Pulse:</font><%= f.text_field :pulse, :size=>"7", :maxlength=>"8" %></center>
+  </div>
+</div>
+
+
+
+<div class="floating-boxfd">
+  <div class="field">
+    
+    <center><font size="3">Temp:</font><%= f.text_field :temp, :size=>"7", :maxlength=>"8" %></center>
+  </div>
+</div>
+
+
+<div class="floating-boxfd">
+  <div class="field">
+    
+    <center><font size="3">RR:</font><%= f.text_field :rr, :size=>"7", :maxlength=>"8" %></center>
+  </div>
+</div>
+
+
+</div><!-- 7buttons end -->
+<!-- --------------------------------------------------------------------------------------------- -->
+
+<div class="meddiv"><!-- this is the meddle div-->
+
+<div class="floating-time"><!-- time box incloude the timestamp-->
+
+<div class="floating-boxtt"><!-- time div box for lables and feilds-->
+           <br><br>
+  <div class="field">
+
+    <%= f.hidden_field :time , :value => :date %>
+  </div>
+  <br><br>
+  Add Time:
+  <br>
+
+        <div class="floating-boxrow">
+        <br>
+        <%= f.label :minutes %><br>
+        <%= f.label :houres %><br>
+        <%= f.label :days %><br>
+        <%= f.label :weeks %><br>
+        <%= f.label :months %><br>
+ </div><!-- end the lables-->
+
+
+        </div><!--end of the first roe text feild-->
+
+      <div class="floating-boxrow">
+      <br>
+      <%= f.text_field :minutes, :size=>"8", :maxlength=>"8" %>
+      <%= f.text_field :houres, :size=>"8", :maxlength=>"8" %>
+      <%= f.text_field :days, :size=>"8", :maxlength=>"8" %>
+       <%= f.text_field :weeks, :size=>"8", :maxlength=>"8" %>
+       <%= f.text_field :months, :size=>"8", :maxlength=>"8" %>
+
+      </div><!-- time stamp ends-->
+<div class="floating-boxsub">
+<br>
+    <center><%= f.submit class: 'buttonsub' %></center>
+</div>
+
+</div><!-- end timer div-->
+<!-- -------------------------------------- -->
+
+
+<div class="floating-boxnav">
+     
+<center><p>
+ <br><span onclick="show('Page1');"><font size="4">MAIN</font></span>
+ <hr class="style2">
+ <span onclick="show('Page2');"><font size="4">LABS</font></span>
+  <hr class="style2">
+ <span onclick="show('Page3');"><font size="4">DOCUMENTS</font></span>
+  <hr class="style2">
+ <span onclick="show('Page4');"><font size="4">ORDERS</font></span>
+  <hr class="style2">
+ <span onclick="show('Page5');"><font size="4">RADIOLOGY</font></span>
+
+</p></center>
+  <!-- <div class="btn-group">-->
+     
+  <!--</div>-->
+</div>
+<br>
+<!--<div class="floating-boxjk"></div>-->
+<div class="floating-boxd">
+
+<div id="Page1" class="page" style="display:none">
+    <h4>Viewer Main:</h4>
+<%= f.text_area :main_view, :id => "m0", :cols => 135, :rows => 10  %>
+<h4>Text Entry Main:</h4>
+   <textarea type="text" onkeypress ="t(this.value)" rows="7" cols="135"></textarea>
+
+ 
+</div>
+<div id="Page2" class="page" style="display:none">
+<h4>Viewer Lab:</h4>
+ <%= f.text_area :lab_view, :id => "m1", :cols => 135, :rows => 10 %>
+ <h4>Text Entry Lab:</h4>
+ <textarea type="text" onkeypress ="t(this.value)" rows="7" cols="135"></textarea>
+
+
+</div>
+<div id="Page3" class="page" style="display:none">
+<h4>Viewer doument:</h4>
+<%= f.text_area :document_view, :id => "m2", :cols => 135, :rows => 10 %>
+<h4>Text Entry Doc:</h4>
+   <textarea type="text" onkeypress ="t(this.value)" rows=7 cols="135"></textarea>
+
+
+</div>
+
+<div id="Page4" class="page" style="display:none">
+<h4>Viewer Order:</h4>
+
+ <%= f.text_area :order_view, :id => "m3", :cols => 135, :rows => 10 %>
+ <h4>Text Entry Order:</h4>
+    <textarea type="text" onkeypress ="t(this.value)" rows="7" cols="135"></textarea>
+
+
+</div>
+
+<div id="Page5" class="page" style="display:none">
+<h4>Viewer Radiology:</h4>
+      <%= f.text_area :radiology_view, :id => "m4", :cols => 135, :rows => 10 %>
+      <h4>Text Entry Radiology:</h4>
+      <textarea type="text" onkeypress ="t(this.value)" rows="7" cols="135"></textarea>
+</div>
+
+
+
+</div><!-- end of the meddile div -->
+
+</div>
+
+
+</div><!-- end of the meddiv ----------------------------------------------------------------------------------------------  -->
+
+</center>
+</div>
+</center>
+</div><!-- end of the meddiv ----------------------------------------------------------------------------------------------  -->
+
+</center>
+
+</center>
+
+  </div>
+<!-- 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999-->
+<%= render(:partial => "form7", :local => {:f => f }) %>
+<!-- 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999-->
+<%end%>
+</div></center><!---end box1 biggiest box --------------------------------------------------------------------------------------------- -->
+<!--- end of the code ----------------------------------------------------------------------------------------------------------------------------- -->
+
+
+
+<script type="text/javascript">
+  
+
+  function show(elementID) {
+    var ele = document.getElementById(elementID);
+    if (!ele) {
+        alert("no such element");
+        return;
+    }
+    var pages = document.getElementsByClassName('page');
+    for(var i = 0; i < pages.length; i++) {
+        pages[i].style.display = 'none';
+    }
+    ele.style.display = 'block';
+}
+</script> 
+<script type="text/javascript">
+  $( function() {
+    $( "#tabs" ).tabs();
+  } );
+</script>
+
+
+
+
+

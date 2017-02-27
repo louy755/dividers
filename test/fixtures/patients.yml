@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gender: MyString
+  age: MyString
+  weight: MyString
+  bp: MyString
+  pulse: MyString
+  temp: MyString
+  rr: MyString
+  time: 2017-02-21 16:28:59
+  minutes: MyString
+  houres: MyString
+  days: MyString
+  weeks: MyString
+  months: MyString
+  main_view: MyText
+  lab_view: MyText
+  document_view: MyText
+  order_view: MyText
+  radiology_view: MyText
+
+two:
+  gender: MyString
+  age: MyString
+  weight: MyString
+  bp: MyString
+  pulse: MyString
+  temp: MyString
+  rr: MyString
+  time: 2017-02-21 16:28:59
+  minutes: MyString
+  houres: MyString
+  days: MyString
+  weeks: MyString
+  months: MyString
+  main_view: MyText
+  lab_view: MyText
+  document_view: MyText
+  order_view: MyText
+  radiology_view: MyText

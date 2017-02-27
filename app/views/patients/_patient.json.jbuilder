@@ -1,0 +1,2 @@
+json.extract! patient, :id, :gender, :age, :weight, :bp, :pulse, :temp, :rr, :time, :minutes, :houres, :days, :weeks, :months, :main_view, :lab_view, :document_view, :order_view, :radiology_view, :created_at, :updated_at
+json.url patient_url(patient, format: :json)
